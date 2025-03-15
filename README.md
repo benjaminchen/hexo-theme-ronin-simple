@@ -11,7 +11,7 @@
 - Git pull theme code
 
 ```sh
-$ git clone https://github.com/benjaminchen/hexo-theme-ronin-simple.git themes/hexo-theme-ronin-simple
+git clone https://github.com/benjaminchen/hexo-theme-ronin-simple.git themes/hexo-theme-ronin-simple
 ```
 
 - Set theme in hexo root config `_config.yml` file
