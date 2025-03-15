@@ -1,0 +1,6 @@
+<% if (page.total > 1){ %>
+    <nav class="page-nav mb-5">
+      <% var prev_text = "&laquo; " + __('prev'); var next_text = __('next') + " &raquo;"%>
+      <%- paginator({ prev_text: prev_text, next_text: next_text }) %>
+    </nav>
+<% } %>

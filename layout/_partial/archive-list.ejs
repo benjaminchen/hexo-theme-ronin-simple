@@ -1,0 +1,27 @@
+<% const archive_post_list = createNewArchivePosts(archive_posts) %>
+<div class="archive-list-container">
+    <div class="posts-collapse">
+        <div class="archive-counter">
+            <div class="dot">
+                <span class="archive-counter-text">共計 <%= archive_posts.length %> 篇文章</span>
+            </div>
+        </div>
+
+        <% archive_post_list.forEach(postItem => { %>
+            <div class="collection-title">
+                <div class="dot">
+                    <span class="archive-year"><%= postItem.year %></span>
+                </div>
+            </div>
+
+            <% postItem.postList.forEach(post => { %>
+                <div class="archive-post">
+                    <div class="dot display-inline">
+                        <span class="archive-post-date"><%= date(post.date, 'MM-DD') %></span>
+                        <a class="archive-post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+                    </div>
+                </div>
+            <% }) %>
+        <% }) %>
+    </div>
+</div>

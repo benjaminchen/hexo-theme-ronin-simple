@@ -1,0 +1,34 @@
+<div class="categories-page">
+    <ul class="category-list">
+        <% site.categories.forEach(function(category) { %>
+            <li class="category-item">
+                <h2 class="category-title" onclick="toggleCategory('<%= category.name %>')">
+                    <span class="toggle-sign"><i class="bi bi-plus-square"></i></span>
+                    <%= category.name %> (<%= category.length %>)
+                </h2>
+                <ul class="post-list" id="category-<%= category.name %>" style="display: none;">
+                    <% category.posts.sort('date', -1).forEach(function(post) { %>
+                        <li>
+                            <a href="<%= url_for(post.path) %>">
+                                <%= post.title %>
+                                <span><%= post.date.format('YYYY-MM-DD') %></span>
+                            </a>
+                        </li>
+                    <% }) %>
+                </ul>
+            </li>
+        <% }) %>
+    </ul>
+</div>
+
+<script>
+    function toggleCategory(categoryName) {
+        const postList = document.getElementById("category-" + categoryName);
+        const toggleSign = postList.previousElementSibling.querySelector(".toggle-sign i");
+        const isOpen = postList.style.display === "block"; // Check if currently open
+
+        postList.style.display = isOpen ? "none" : "block"; // Toggle display
+        toggleSign.classList.toggle("bi-plus-square", isOpen); // Update icon based on open/close state
+        toggleSign.classList.toggle("bi-dash-square", !isOpen);
+    }
+</script>

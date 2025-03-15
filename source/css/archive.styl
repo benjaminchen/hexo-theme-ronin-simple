@@ -1,0 +1,73 @@
+.archive-list-container {
+    opacity: 1;
+    display: block;
+    position: relative;
+}
+
+.posts-collapse::after {
+    content: " ";
+    position: absolute;
+    top: 20px;
+    left: 0;
+    margin-left: -2px;
+    width: 4px;
+    height: 100%;
+    background: lightgray;
+    z-index: -1;
+}
+
+.archive-counter, .collection-title, .archive-post {
+    opacity: 1;
+    display: block;
+    position: relative;
+    border-bottom: 1px dashed #ccc;
+}
+
+.dot {
+    margin: 20px 0 20px 10px;
+    font-size: 16px;
+}
+
+.collection-title .dot {
+    margin: 30px 0 30px 15px;
+}
+
+.dot::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 8px;
+    height: 8px;
+    margin-left: -4px;
+    background: black;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.dot > span {
+    padding-left: 15px;
+}
+
+.dot > a {
+    color: #666;
+    text-decoration: none;
+    outline: none;
+}
+
+.dot > a:hover {
+    text-decoration: underline;
+}
+
+.archive-counter-text {
+    font-size: 24px;
+}
+
+.archive-year {
+    font-size: 20px;
+}
+
+.archive-post-date {
+    font-size: 14px;
+    padding-right: 8px;
+}
