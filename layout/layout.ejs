@@ -40,6 +40,19 @@
                         </div>
                     </div>
 
+                    <div class="px-2 mb-3 d-md-none">
+                        <% if (theme.contact_link) { %>
+                            <a href="<%= theme.contact_link %>" class="icon-link" title="Contact Me">
+                                <i class="bi bi-person-lines-fill"></i>
+                            </a>
+                        <% } %>
+                        <% if (theme.contact_mail) { %>
+                            <a href="mailto:<%= theme.contact_mail %>" class="icon-link" title="Send Email">
+                                <i class="bi bi-envelope-at"></i>
+                            </a>
+                        <% } %>
+                    </div>
+
                     <% if (page.path.includes('categories') || page.path.includes('archives')) { %>
                     <nav class="row border-bottom font-english">
                         <div class="col-1 pb-3 text-dark">
@@ -79,6 +92,19 @@
                             </div>
                             <h4 class="profile-author"><%= config.author || "作者" %></h4>
                             <p class="profile-description"><%= theme.author_description || "作者描述" %></p>
+                        </div>
+
+                        <div class="action-icons">
+                            <% if (theme.contact_link) { %>
+                                <a href="<%= theme.contact_link %>" class="icon-link" title="Contact Me">
+                                    <i class="bi bi-person-lines-fill"></i>
+                                </a>
+                            <% } %>
+                            <% if (theme.contact_mail) { %>
+                                <a href="mailto:<%= theme.contact_mail %>" class="icon-link" title="Send Email">
+                                    <i class="bi bi-envelope-at"></i>
+                                </a>
+                            <% } %>
                         </div>
 
                         <div class="sidebar-menu">

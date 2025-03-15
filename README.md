@@ -29,3 +29,12 @@ hexo new page about
 ```
 
 - This theme will automatically display the About page when it exist
+
+## Theme Config
+
+- logo: Used as the site’s logo
+- profile_picture: Personal picture for profile display
+- author_description: A brief description of the author
+- copyright_year: The year of site copyright
+- contact_link: A link to reach out for contact
+- contact_mail: The email to contact
