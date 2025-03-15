@@ -1,1 +1,1 @@
-# hexo-ronin-simple-theme
+# hexo-theme-ronin-simple
