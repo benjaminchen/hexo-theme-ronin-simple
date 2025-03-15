@@ -1,20 +1,24 @@
 <% if (site.posts && site.posts.length > 0) { %>
     <% for (var i = 0; i < site.posts.length; i++) { %>
         <div class="row mb-4 post-container">
-            <div class="col-9 d-block ps-0 pe-3">
+            <div class="col-8 col-md-9 d-block ps-0 pe-3">
                 <h2 class="text-primary post-title">
                     <a href="<%= site.posts.data[i].path %>" class="text-decoration-none text-dark">
                         <%= site.posts.data[i].title %>
                     </a>
                 </h2>
-                <p class="text-secondary post-excerpt">
+                <p class="text-secondary post-excerpt d-none d-md-block">
                     <%= site.posts.data[i].excerpt || site.posts.data[i].content.replace(/<[^>]*>/g, '').slice(0, 100) %>...
+                </p>
+                <!-- 手機版 post -->
+                <p class="text-secondary post-excerpt d-block d-md-none">
+                    <%= site.posts.data[i].excerpt || site.posts.data[i].content.replace(/<[^>]*>/g, '').slice(0, 20) %>...
                 </p>
                 <p class="text-secondary post-date">
                     <%= new Date(site.posts.data[i].date).toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' }) %>
                 </p>
             </div>
-            <div class="col-3 pe-0">
+            <div class="col-4 col-md-3">
                 <img src="<%= site.posts.data[i].image || '/images/default-cover.jpg' %>" alt="<%= site.posts.data[i].title %>" class="img-fluid rounded" style="width: 100%; height: auto; overflow: hidden; display: block; margin: 0 auto;">
             </div>
         </div>
