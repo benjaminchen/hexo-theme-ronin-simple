@@ -84,7 +84,9 @@
                         <div class="sidebar-menu">
                             <ul>
                                 <li><a href="<%= config.url %>/">首頁</a></li>
-                                <li><a href="<%= config.url %>/about">關於</a></li>
+                                <% if (site.pages.data.some(p=> p.source === 'about/index.md')) { %>
+                                    <li><a href="<%= config.url %>/about">關於</a></li>
+                                <% } %>
                                 <li><a href="<%= config.url %>/archives">歸檔</a></li>
                                 <li><a href="<%= config.url %>/categories">分類</a></li>
                             </ul>
